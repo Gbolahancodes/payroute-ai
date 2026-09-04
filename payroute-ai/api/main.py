@@ -21,7 +21,7 @@ from fastapi.middleware.cors import CORSMiddleware
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "ml"))
 
-from schemas import (  # noqa: E402
+from .schemas import (  # noqa: E402
     ChannelScore, CorridorGraph, DriftSummary, PredictResponse,
     SimulateResponse, TransactionInput,
 )
