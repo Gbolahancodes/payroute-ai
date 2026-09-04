@@ -1,0 +1,25 @@
+# PayRoute AI — ML pipeline dependencies (CPU-only, zero paid keys).
+# Pinned to major versions for reproducibility.
+pandas==2.2.*
+numpy==1.26.*
+Faker==25.*
+scikit-learn==1.4.*
+xgboost==2.0.*
+shap==0.45.*
+networkx==3.3.*
+mlflow==2.13.*
+onnx==1.16.*
+onnxruntime==1.18.*
+onnxmltools==1.12.*
+evidently==0.4.*
+python-dotenv==1.0.*
+requests==2.32.*
+
+# --- Optional graph-embedding stack (best-effort) --------------------------
+# If these install cleanly the corridor model uses Node2Vec; otherwise it
+# falls back to a spectral embedding automatically. See ml/graph_model.py.
+node2vec==0.4.*
+# torch / torch-geometric are intentionally NOT pinned here. If you want the
+# GraphSAGE path, install CPU wheels manually:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+#   pip install torch-geometric

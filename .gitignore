@@ -1,0 +1,41 @@
+# --- Dependencies ---
+/node_modules
+/.pnp
+.pnp.js
+
+# --- Python / FastAPI ---
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- Environment & Local Configs ---
+.env
+.env.local
+.env.*.local
+
+# --- Build & Vite Outputs ---
+/dist
+/dist-ssr
+*.local
+
+# --- IDEs & Editors ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# --- ML Artifacts & Data (Generated locally) ---
+/data/*.csv
+/data/*.parquet
+/models/*.pkl
+/models/*.onnx
+!/models/.gitkeep   

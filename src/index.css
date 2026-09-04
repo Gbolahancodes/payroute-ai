@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+/*
+ * PayRoute AI — light editorial design system.
+ * Parchment ground · terracotta accent · ink text · ruled structure.
+ */
+
+:root {
+  --cream:       #F8F8F8;
+  --white:       #FFFFFF;
+  --ink:         #0A0A0A;
+  --ink-2:       #3A3A3A;
+  --ink-3:       #888888;
+  --rule:        #D0D0D0;
+  --rule-2:      #EBEBEB;
+  --ember:       #0A0A0A;
+  --ember-soft:  #F0F0F0;
+  --risk-low:    #0A0A0A;
+  --risk-low-bg: #F0F0F0;
+  --risk-med:    #3A3A3A;
+  --risk-med-bg: #EBEBEB;
+  --risk-high:   #0A0A0A;
+  --risk-high-bg:#F0F0F0;
+}
+
+@theme inline {
+  --font-sans:    'Source Sans 3', system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+  --color-cream:        var(--cream);
+  --color-white:        var(--white);
+  --color-ink:          var(--ink);
+  --color-ink-2:        var(--ink-2);
+  --color-ink-3:        var(--ink-3);
+  --color-rule:         var(--rule);
+  --color-rule-2:       var(--rule-2);
+  --color-ember:        var(--ember);
+  --color-ember-soft:   var(--ember-soft);
+  --color-risk-low:     var(--risk-low);
+  --color-risk-low-bg:  var(--risk-low-bg);
+  --color-risk-med:     var(--risk-med);
+  --color-risk-med-bg:  var(--risk-med-bg);
+  --color-risk-high:    var(--risk-high);
+  --color-risk-high-bg: var(--risk-high-bg);
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--rule-2);
+  color: var(--ink);
+}
+
+.font-display { font-family: var(--font-display); }
+.font-mono    { font-family: var(--font-mono); font-feature-settings: 'tnum' 1; }
+
+/* scrollbars — hide until hover */
+* { scrollbar-width: thin; scrollbar-color: transparent transparent; }
+*:hover::-webkit-scrollbar-thumb { background: var(--rule); }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: transparent; border-radius: 3px; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+.pulse-soft { animation: pulseSoft 1.5s ease-in-out infinite; }
+
+/* bottom-border-only inputs */
+.input-line {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0;
+  outline: none;
+  padding: 6px 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink);
+  width: 100%;
+  transition: border-color 0.15s;
+}
+.input-line:focus { border-bottom-color: var(--ink); }
+.input-line::placeholder { color: var(--ink-3); }
+
+.select-line {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0;
+  outline: none;
+  padding: 6px 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink);
+  width: 100%;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.select-line:focus { border-bottom-color: var(--ink); }
+
+/* range slider */
+.range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  border-radius: 0;
+  background: var(--rule);
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+}
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #0A0A0A;
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 1.5px #0A0A0A;
+  cursor: pointer;
+  transition: transform 0.12s;
+}
+.range-slider::-webkit-slider-thumb:hover { transform: scale(1.2); }
+.range-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #0A0A0A;
+  border: 2px solid var(--white);
+  cursor: pointer;
+}

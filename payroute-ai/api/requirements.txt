@@ -1,0 +1,14 @@
+# PayRoute AI — API dependencies. Kept separate from the ML env so the
+# service container stays small (it loads artifacts, it does not train).
+fastapi==0.111.*
+uvicorn[standard]==0.30.*
+pydantic==2.7.*
+numpy==1.26.*
+pandas==2.2.*
+onnxruntime==1.18.*
+scikit-learn==1.4.*
+xgboost==2.0.*
+shap==0.45.*
+networkx==3.3.*
+python-dotenv==1.0.*
+requests==2.32.*

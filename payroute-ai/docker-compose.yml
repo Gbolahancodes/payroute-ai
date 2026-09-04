@@ -1,0 +1,26 @@
+# PayRoute AI — local container orchestration.
+# NOTE: run `bash scripts/run_all.sh` first so ./models contains trained
+# artifacts, then `docker compose up --build`.
+services:
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - CORS_ORIGINS=http://localhost:5173,http://localhost:4173
+      # - HF_API_TOKEN=   # optional; leave unset for rule-based agent
+    volumes:
+      - ./models:/app/models:ro
+
+  web:
+    build:
+      context: .
+      dockerfile: web/Dockerfile
+    ports:
+      - "4173:4173"
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    depends_on:
+      - api

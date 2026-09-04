@@ -1,0 +1,9 @@
+{
+  "degraded": true,
+  "window": "last 20% of records vs prior baseline",
+  "baseline_failure_rate": 0.1798,
+  "current_failure_rate": 0.2445,
+  "psi_failure": 0.0252,
+  "psi_reliability": 0.5474,
+  "corridors_affected": 40
+}
